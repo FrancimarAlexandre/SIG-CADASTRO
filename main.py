@@ -20,18 +20,24 @@ class App():
 
 
     def TelaInicial(self):
+        # Dados Pessoais
+        self.LabelInfoDadosPessoais = ctk.CTkLabel(self.inicio_tab,text="DADOS PESSOAIS",font=("moderna",20)).place(relx=0.35,rely=0.01)
         # Nome usuário
-        self.LabelNome = ctk.CTkLabel(self.inicio_tab,text="Nome",font=("moderna",20)).place(relx=0.01,rely=0.01)
+        self.LabelNome = ctk.CTkLabel(self.inicio_tab,text="Nome",font=("moderna",20)).place(relx=0.01,rely=0.02)
         self.EntryNome = ctk.CTkEntry(self.inicio_tab,font=("mordena",20))
-        self.EntryNome.place(relx=0.01,rely=0.05,relwidth=0.55)
+        self.EntryNome.place(relx=0.01,rely=0.06,relwidth=0.55)
         # Idade usuário
-        self.LabelIdade = ctk.CTkLabel(self.inicio_tab,text="Idade",font=("moderna",20)).place(relx=0.58,rely=0.01)
+        self.LabelIdade = ctk.CTkLabel(self.inicio_tab,text="Idade",font=("moderna",20)).place(relx=0.58,rely=0.02)
         self.EntryIdade = ctk.CTkEntry(self.inicio_tab,font=("mordena",20))
-        self.EntryIdade.place(relx=0.58,rely=0.05,relwidth=0.05)
+        self.EntryIdade.place(relx=0.58,rely=0.06,relwidth=0.05)
         # Email usuário
-        self.LabelNome = ctk.CTkLabel(self.inicio_tab,text="Gmail",font=("moderna",20)).place(relx=0.01,rely=0.1)
-        self.EntryNome = ctk.CTkEntry(self.inicio_tab,font=("mordena",20))
-        self.EntryNome.place(relx=0.01,rely=0.15,relwidth=0.55)
+        self.LabelGmail = ctk.CTkLabel(self.inicio_tab,text="Gmail",font=("moderna",20)).place(relx=0.01,rely=0.11)
+        self.EntryGmail = ctk.CTkEntry(self.inicio_tab,font=("mordena",20))
+        self.EntryGmail.place(relx=0.01,rely=0.16,relwidth=0.55)
+        # Telefone usuário
+        self.LabelTelefone = ctk.CTkLabel(self.inicio_tab,text="Telefone",font=("moderna",20)).place(relx=0.58,rely=0.11)
+        self.EntryTelefone = ctk.CTkEntry(self.inicio_tab,font=("mordena",20))
+        self.EntryTelefone.place(relx=0.58,rely=0.16,relwidth=0.20)
 if "__main__":
     janela = ctk.CTk() # criando janela
 
