@@ -12,21 +12,27 @@ class DataBase:
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
                 nome VARCHAR(255) NOT NULL,
                 email VARCHAR(255) NOT NULL,
-                idade INTEGER NOT NULL,
+                idade VARCHAR NOT NULL,
                 rua VARCHAR(255) NOT NULL,
                 bairro VARCHAR(255) NOT NULL,
                 cidade VARCHAR(255) NOT NULL,
-                estaddo VARCHAR(255) NOT NULL,
-                numero  INTEGER NOT NULL
+                estado VARCHAR(255) NOT NULL,
+                numero VARCHAR NOT NULL
             )
             """)
         self.conn.commit()
     def desconnect_bd(self):
         self.cursor.close()
     # CREATE
-    def insert_dados(self):
-        pass
-
+    def insert_dados(self,nome,email,idade,rua,bairro,cidade,estado,numero):
+        self.connect_bd()
+        self.cursor.execute("""
+            INSERT INTO Cadastro (nome, email, idade, rua, bairro, cidade, estado, numero)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+        """, (nome, email, idade, rua, bairro, cidade, estado, numero))
+        
+        self.conn.commit()
+        self.desconnect_bd()
 
 
 a= DataBase()

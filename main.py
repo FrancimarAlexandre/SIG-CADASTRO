@@ -1,5 +1,5 @@
 import customtkinter as ctk# importando a biblioteca
-
+from funcs import DataBase
 # class App Principal
 class App():
     def __init__(self):
@@ -42,27 +42,41 @@ class App():
         # Endereço
         self.LabelInfoDadosPessoais = ctk.CTkLabel(self.inicio_tab,text="ENDEREÇO",font=("moderna",20)).place(relx=0.35,rely=0.23)
         # RUA
-        self.LabelNome = ctk.CTkLabel(self.inicio_tab,text="Rua",font=("moderna",20)).place(relx=0.01,rely=0.24)
-        self.EntryNome = ctk.CTkEntry(self.inicio_tab,font=("mordena",20))
-        self.EntryNome.place(relx=0.01,rely=0.29,relwidth=0.4)
+        self.LabelRua = ctk.CTkLabel(self.inicio_tab,text="Rua",font=("moderna",20)).place(relx=0.01,rely=0.24)
+        self.EntryRua = ctk.CTkEntry(self.inicio_tab,font=("mordena",20))
+        self.EntryRua.place(relx=0.01,rely=0.29,relwidth=0.4)
         # BAIRRO
-        self.LabelIdade = ctk.CTkLabel(self.inicio_tab,text="Bairro",font=("moderna",20)).place(relx=0.5,rely=0.24)
-        self.EntryIdade = ctk.CTkEntry(self.inicio_tab,font=("mordena",20))
-        self.EntryIdade.place(relx=0.5,rely=0.29,relwidth=0.4)
+        self.LabelBairro = ctk.CTkLabel(self.inicio_tab,text="Bairro",font=("moderna",20)).place(relx=0.5,rely=0.24)
+        self.EntryBairro = ctk.CTkEntry(self.inicio_tab,font=("mordena",20))
+        self.EntryBairro.place(relx=0.5,rely=0.29,relwidth=0.4)
         # CIDADE
-        self.LabelGmail = ctk.CTkLabel(self.inicio_tab,text="Cidade",font=("moderna",20)).place(relx=0.01,rely=0.34)
-        self.EntryGmail = ctk.CTkEntry(self.inicio_tab,font=("mordena",20))
-        self.EntryGmail.place(relx=0.01,rely=0.39,relwidth=0.4)
+        self.LabelCidade = ctk.CTkLabel(self.inicio_tab,text="Cidade",font=("moderna",20)).place(relx=0.01,rely=0.34)
+        self.EntryCidade = ctk.CTkEntry(self.inicio_tab,font=("mordena",20))
+        self.EntryCidade.place(relx=0.01,rely=0.39,relwidth=0.4)
         # ESTADO
-        self.LabelTelefone = ctk.CTkLabel(self.inicio_tab,text="Estado",font=("moderna",20)).place(relx=0.5,rely=0.34)
-        self.EntryTelefone = ctk.CTkEntry(self.inicio_tab,font=("mordena",20))
-        self.EntryTelefone.place(relx=0.5,rely=0.39,relwidth=0.4)
+        self.LabelEstado = ctk.CTkLabel(self.inicio_tab,text="Estado",font=("moderna",20)).place(relx=0.5,rely=0.34)
+        self.EntryEstado = ctk.CTkEntry(self.inicio_tab,font=("mordena",20))
+        self.EntryEstado.place(relx=0.5,rely=0.39,relwidth=0.4)
         # NÙMERO
-        self.LabelIdade = ctk.CTkLabel(self.inicio_tab,text="N°",font=("moderna",20)).place(relx=0.01,rely=0.44)
-        self.EntryIdade = ctk.CTkEntry(self.inicio_tab,font=("mordena",20))
-        self.EntryIdade.place(relx=0.01,rely=0.49,relwidth=0.05)
+        self.LabelNumero = ctk.CTkLabel(self.inicio_tab,text="N°",font=("moderna",20)).place(relx=0.01,rely=0.44)
+        self.EntryNumero = ctk.CTkEntry(self.inicio_tab,font=("mordena",20))
+        self.EntryNumero.place(relx=0.01,rely=0.49,relwidth=0.05)
+        self.ButtonCadastro = ctk.CTkButton(self.inicio_tab,text="CADASTRAR",font=("moderna",20),command=self.convert_dados).place(relx = 0.45,rely=0.55,relwidth=0.1)
+
+    def convert_dados(self):
+        self.nome = self.EntryNome.get()
+        self.email = self.EntryGmail.get()
+        self.idade = self.EntryIdade.get()
+        self.rua = self.EntryRua.get()
+        self.bairro = self.EntryBairro.get()
+        self.cidade = self.EntryCidade.get()
+        self.estado = self.EntryEstado.get()
+        self.numero = self.EntryNumero.get()
+
+        print(self.nome)
         
-        self.ButtonCadastro = ctk.CTkButton(self.inicio_tab,text="CADASTRAR",font=("moderna",20)).place(relx = 0.45,rely=0.55,relwidth=0.1)
+        a = DataBase()
+        return a.insert_dados(self.nome,self.email,self.idade,self.rua,self.bairro,self.cidade,self.estado,self.numero)
 if "__main__":
     janela = ctk.CTk() # criando janela
 
