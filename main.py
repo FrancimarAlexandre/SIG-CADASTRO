@@ -40,8 +40,29 @@ class App():
         self.EntryTelefone.place(relx=0.58,rely=0.16,relwidth=0.20)
         
         # Endereço
-        self.LabelInfoDadosPessoais = ctk.CTkLabel(self.inicio_tab,text="ENDEREÇO",font=("moderna",20)).place(relx=0.35,rely=0.20)
+        self.LabelInfoDadosPessoais = ctk.CTkLabel(self.inicio_tab,text="ENDEREÇO",font=("moderna",20)).place(relx=0.35,rely=0.23)
+        # RUA
+        self.LabelNome = ctk.CTkLabel(self.inicio_tab,text="Rua",font=("moderna",20)).place(relx=0.01,rely=0.24)
+        self.EntryNome = ctk.CTkEntry(self.inicio_tab,font=("mordena",20))
+        self.EntryNome.place(relx=0.01,rely=0.29,relwidth=0.4)
+        # BAIRRO
+        self.LabelIdade = ctk.CTkLabel(self.inicio_tab,text="Bairro",font=("moderna",20)).place(relx=0.5,rely=0.24)
+        self.EntryIdade = ctk.CTkEntry(self.inicio_tab,font=("mordena",20))
+        self.EntryIdade.place(relx=0.5,rely=0.29,relwidth=0.4)
+        # CIDADE
+        self.LabelGmail = ctk.CTkLabel(self.inicio_tab,text="Cidade",font=("moderna",20)).place(relx=0.01,rely=0.34)
+        self.EntryGmail = ctk.CTkEntry(self.inicio_tab,font=("mordena",20))
+        self.EntryGmail.place(relx=0.01,rely=0.39,relwidth=0.4)
+        # ESTADO
+        self.LabelTelefone = ctk.CTkLabel(self.inicio_tab,text="Estado",font=("moderna",20)).place(relx=0.5,rely=0.34)
+        self.EntryTelefone = ctk.CTkEntry(self.inicio_tab,font=("mordena",20))
+        self.EntryTelefone.place(relx=0.5,rely=0.39,relwidth=0.4)
+        # NÙMERO
+        self.LabelIdade = ctk.CTkLabel(self.inicio_tab,text="N°",font=("moderna",20)).place(relx=0.01,rely=0.44)
+        self.EntryIdade = ctk.CTkEntry(self.inicio_tab,font=("mordena",20))
+        self.EntryIdade.place(relx=0.01,rely=0.49,relwidth=0.05)
         
+        self.ButtonCadastro = ctk.CTkButton(self.inicio_tab,text="CADASTRAR",font=("moderna",20)).place(relx = 0.45,rely=0.55,relwidth=0.1)
 if "__main__":
     janela = ctk.CTk() # criando janela
 
