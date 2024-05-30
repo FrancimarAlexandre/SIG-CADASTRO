@@ -38,6 +38,10 @@ class App():
         self.LabelTelefone = ctk.CTkLabel(self.inicio_tab,text="Telefone",font=("moderna",20)).place(relx=0.58,rely=0.11)
         self.EntryTelefone = ctk.CTkEntry(self.inicio_tab,font=("mordena",20))
         self.EntryTelefone.place(relx=0.58,rely=0.16,relwidth=0.20)
+        
+        # Endereço
+        self.LabelInfoDadosPessoais = ctk.CTkLabel(self.inicio_tab,text="ENDEREÇO",font=("moderna",20)).place(relx=0.35,rely=0.20)
+        
 if "__main__":
     janela = ctk.CTk() # criando janela
 
