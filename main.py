@@ -62,21 +62,30 @@ class App():
         self.EntryNumero = ctk.CTkEntry(self.inicio_tab,font=("mordena",20))
         self.EntryNumero.place(relx=0.01,rely=0.49,relwidth=0.05)
         self.ButtonCadastro = ctk.CTkButton(self.inicio_tab,text="CADASTRAR",font=("moderna",20),command=self.convert_dados).place(relx = 0.45,rely=0.55,relwidth=0.1)
-
+    def limpar_tela(self):
+        self.EntryNome.delete(0,ctk.END)
+        self.EntryGmail.delete(0,ctk.END)
+        self.EntryIdade.delete(0,ctk.END)
+        self.EntryTelefone.delete(0,ctk.END)
+        self.EntryRua.delete(0,ctk.END)
+        self.EntryBairro.delete(0,ctk.END)
+        self.EntryCidade.delete(0,ctk.END)
+        self.EntryEstado.delete(0,ctk.END)
+        self.EntryNumero.delete(0,ctk.END)
     def convert_dados(self):
         self.nome = self.EntryNome.get()
         self.email = self.EntryGmail.get()
         self.idade = self.EntryIdade.get()
+        self.telefone = self.EntryTelefone.get()
         self.rua = self.EntryRua.get()
         self.bairro = self.EntryBairro.get()
         self.cidade = self.EntryCidade.get()
         self.estado = self.EntryEstado.get()
         self.numero = self.EntryNumero.get()
 
-        print(self.nome)
-        
+        self.limpar_tela()
         a = DataBase()
-        return a.insert_dados(self.nome,self.email,self.idade,self.rua,self.bairro,self.cidade,self.estado,self.numero)
+        return a.insert_dados(self.nome,self.email,self.idade,self.telefone,self.rua,self.bairro,self.cidade,self.estado,self.numero)
 if "__main__":
     janela = ctk.CTk() # criando janela
 
