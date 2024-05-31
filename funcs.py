@@ -34,7 +34,12 @@ class DataBase:
         
         self.conn.commit()
         self.desconnect_bd()
-
-        
+    # SELECT
+    def select_dados(self):
+        self.connect_bd()
+        self.cursor.execute("SELECT * FROM Cadastro")
+        dados = self.cursor.fetchall()
+        self.desconnect_bd()
+        return dados
 a= DataBase()
 a.connect_bd()
