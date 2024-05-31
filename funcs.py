@@ -12,13 +12,13 @@ class DataBase:
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
                 nome VARCHAR(255) NOT NULL,
                 email VARCHAR(255) NOT NULL,
-                idade VARCHAR NOT NULL,
+                idade INT NOT NULL,
                 telefone VARCHAR NOT NULL,
                 rua VARCHAR(255) NOT NULL,
                 bairro VARCHAR(255) NOT NULL,
                 cidade VARCHAR(255) NOT NULL,
                 estado VARCHAR(255) NOT NULL,
-                numero VARCHAR NOT NULL
+                numero INT NOT NULL
             )
             """)
         self.conn.commit()
