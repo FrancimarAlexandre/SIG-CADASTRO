@@ -9,6 +9,7 @@ class App():
         self.TabViews()
         self.TelaInicial()
         self.cadastro_view()
+ 
         self.janela.mainloop() # loop principal da janela
     
     def TabViews(self):
@@ -18,7 +19,7 @@ class App():
         # criando as títulos das abas
         self.inicio_tab = self.tabview.add("Cadastro")
         self.cadastroView_tab = self.tabview.add("Exibir Cadastros")
-        self.credito_tab = self.tabview.add("Créditos")
+      
 
     def TelaInicial(self):
         # Dados Pessoais
@@ -129,7 +130,6 @@ class App():
         # Inserir os dados atualizados no Treeview
         for i in dados:
             self.treeview.insert("", ctk.END, values=i)
-           
 if "__main__":
     janela = ctk.CTk() # criando janela
     janela._set_appearance_mode('dark') # definindo tema da tela
